@@ -25,7 +25,9 @@ import { environment } from '../environments/environment';
 
 export function loadConfig(oidcConfigService: OidcConfigService) {
   console.log('APP_INITIALIZER STARTING');
-  return () => oidcConfigService.load_using_custom_stsServer('https://login.microsoftonline.com/damienbod.onmicrosoft.com/.well-known/openid-configuration');
+  // https://login.microsoftonline.com/damienbod.onmicrosoft.com/.well-known/openid-configuration
+  // https://login.microsoftonline.com/common/discovery/keys
+  return () => oidcConfigService.load_using_custom_stsServer('https://localhost:44347/well-known-openid-configuration.json');
 }
 
 @NgModule({
@@ -71,7 +73,7 @@ export class AppModule {
       openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/damienbod.onmicrosoft.com';
       openIDImplicitFlowConfiguration.redirect_url = 'https://localhost:44347';
       openIDImplicitFlowConfiguration.client_id = 'fd87184a-00c2-4aee-bc72-c7c1dd468e8f';
-      openIDImplicitFlowConfiguration.response_type = 'id_token token';
+      openIDImplicitFlowConfiguration.response_type = 'id_token';
       openIDImplicitFlowConfiguration.scope = 'openid profile email';
       openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44347';
       openIDImplicitFlowConfiguration.post_login_route = '/home';
@@ -80,7 +82,7 @@ export class AppModule {
       openIDImplicitFlowConfiguration.auto_userinfo = false;
       openIDImplicitFlowConfiguration.log_console_warning_active = true;
       openIDImplicitFlowConfiguration.log_console_debug_active = !environment.production;
-      openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds = 30;
+      openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds = 60;
 
 
       const authWellKnownEndpoints = new AuthWellKnownEndpoints();

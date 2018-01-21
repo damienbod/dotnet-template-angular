@@ -19,7 +19,17 @@ namespace dotnet_angular
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder
+                            .AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
+            });
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -38,6 +48,8 @@ namespace dotnet_angular
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            app.UseCors("AllowAllOrigins");
 
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
