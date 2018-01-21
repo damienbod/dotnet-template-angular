@@ -73,8 +73,8 @@ export class AppModule {
       openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/damienbod.onmicrosoft.com';
       openIDImplicitFlowConfiguration.redirect_url = 'https://localhost:44347';
       openIDImplicitFlowConfiguration.client_id = 'fd87184a-00c2-4aee-bc72-c7c1dd468e8f';
-      openIDImplicitFlowConfiguration.response_type = 'id_token';
-      openIDImplicitFlowConfiguration.scope = 'openid profile email';
+      openIDImplicitFlowConfiguration.response_type = 'id_token token';
+      openIDImplicitFlowConfiguration.scope = 'openid profile email ';
       openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44347';
       openIDImplicitFlowConfiguration.post_login_route = '/home';
       openIDImplicitFlowConfiguration.forbidden_route = '/home';
@@ -89,7 +89,7 @@ export class AppModule {
       authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
 
       this.oidcSecurityService.setupModule(openIDImplicitFlowConfiguration, authWellKnownEndpoints);
-      this.oidcSecurityService.setCustomRequestParameters({ 'prompt': 'admin_consent' });
+      this.oidcSecurityService.setCustomRequestParameters({ 'prompt': 'admin_consent', 'resource': 'https://graph.windows.net'});
     });
 
     console.log('APP STARTING');
