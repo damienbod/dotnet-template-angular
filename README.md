@@ -1,6 +1,6 @@
 # dotnet-template-angular
 
-Implementations of OIDC clients use the dotnet angular template and angular-auth-oidc-client and bootstrap 4
+Implementations of OIDC clients using the dotnet angular template and angular-auth-oidc-client and bootstrap 4
 
 ### Links
 

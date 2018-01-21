@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-angular-azure-ad-oidc", "dotnet-angular-azure-ad-oidc\dotnet-angular-azure-ad-oidc.csproj", "{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{07740C03-DF79-4403-9ACF-5F2193041861}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07740C03-DF79-4403-9ACF-5F2193041861}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07740C03-DF79-4403-9ACF-5F2193041861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

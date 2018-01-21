@@ -72,10 +72,10 @@ export class AppModule {
         openIDImplicitFlowConfiguration.client_id = '188968487735-b1hh7k87nkkh6vv84548sinju2kpr7gn.apps.googleusercontent.com';
         openIDImplicitFlowConfiguration.response_type = 'id_token token';
         openIDImplicitFlowConfiguration.scope = 'openid email profile';
-        openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44386/Unauthorized';
+        openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44386/unauthorized';
         openIDImplicitFlowConfiguration.post_login_route = '/home';
-        openIDImplicitFlowConfiguration.forbidden_route = '/Forbidden';
-        openIDImplicitFlowConfiguration.unauthorized_route = '/Unauthorized';
+        openIDImplicitFlowConfiguration.forbidden_route = '/forbidden';
+        openIDImplicitFlowConfiguration.unauthorized_route = '/unauthorized';
         openIDImplicitFlowConfiguration.trigger_authorization_result_event = true;
         openIDImplicitFlowConfiguration.log_console_warning_active = true;
         openIDImplicitFlowConfiguration.log_console_debug_active = true;
