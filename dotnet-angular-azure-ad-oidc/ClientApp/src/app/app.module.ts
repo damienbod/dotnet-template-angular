@@ -25,7 +25,7 @@ import { environment } from '../environments/environment';
 
 export function loadConfig(oidcConfigService: OidcConfigService) {
   console.log('APP_INITIALIZER STARTING');
-  return () => oidcConfigService.load_using_custom_stsServer('https://login.microsoftonline.com/fabrikamb2c.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=b2c_1_susi');
+  return () => oidcConfigService.load_using_custom_stsServer('https://login.microsoftonline.com/damienbod.onmicrosoft.com/.well-known/openid-configuration');
 }
 
 @NgModule({
@@ -68,11 +68,11 @@ export class AppModule {
     this.oidcConfigService.onConfigurationLoaded.subscribe(() => {
 
       const openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
-      openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/tfp/fabrikamb2c.onmicrosoft.com/b2c_1_susi/oauth2/v2.0/';
+      openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/damienbod.onmicrosoft.com';
       openIDImplicitFlowConfiguration.redirect_url = 'http://localhost:44347';
-      openIDImplicitFlowConfiguration.client_id = 'e760cab2-b9a1-4c0d-86fb-ff7084abd902';
+      openIDImplicitFlowConfiguration.client_id = 'fd87184a-00c2-4aee-bc72-c7c1dd468e8f';
       openIDImplicitFlowConfiguration.response_type = 'id_token token';
-      openIDImplicitFlowConfiguration.scope = 'openid https://fabrikamb2c.onmicrosoft.com/demoapi/demo.read';
+      openIDImplicitFlowConfiguration.scope = 'openid profile email';
       openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'http://localhost:44347';
       openIDImplicitFlowConfiguration.post_login_route = '/home';
       openIDImplicitFlowConfiguration.forbidden_route = '/home';
