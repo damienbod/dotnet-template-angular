@@ -26,7 +26,9 @@ import { environment } from '../environments/environment';
 export function loadConfig(oidcConfigService: OidcConfigService) {
   console.log('APP_INITIALIZER STARTING');
   // https://login.microsoftonline.com/damienbod.onmicrosoft.com/.well-known/openid-configuration
-  // https://login.microsoftonline.com/common/discovery/keys
+  // jwt keys: https://login.microsoftonline.com/common/discovery/keys
+  // Azure AD does not support CORS, so you need to download the OIDC configuration, and use these from the application.
+  // The jwt keys needs to be configured in the well-known-openid-configuration.json
   return () => oidcConfigService.load_using_custom_stsServer('https://localhost:44347/well-known-openid-configuration.json');
 }
 
@@ -83,7 +85,6 @@ export class AppModule {
       openIDImplicitFlowConfiguration.log_console_warning_active = true;
       openIDImplicitFlowConfiguration.log_console_debug_active = !environment.production;
       openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds = 600;
-
 
       const authWellKnownEndpoints = new AuthWellKnownEndpoints();
       authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
