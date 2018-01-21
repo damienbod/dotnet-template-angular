@@ -69,11 +69,11 @@ export class AppModule {
 
       const openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
       openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/damienbod.onmicrosoft.com';
-      openIDImplicitFlowConfiguration.redirect_url = 'http://localhost:44347';
+      openIDImplicitFlowConfiguration.redirect_url = 'https://localhost:44347';
       openIDImplicitFlowConfiguration.client_id = 'fd87184a-00c2-4aee-bc72-c7c1dd468e8f';
       openIDImplicitFlowConfiguration.response_type = 'id_token token';
       openIDImplicitFlowConfiguration.scope = 'openid profile email';
-      openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'http://localhost:44347';
+      openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44347';
       openIDImplicitFlowConfiguration.post_login_route = '/home';
       openIDImplicitFlowConfiguration.forbidden_route = '/home';
       openIDImplicitFlowConfiguration.unauthorized_route = '/home';
@@ -87,7 +87,7 @@ export class AppModule {
       authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
 
       this.oidcSecurityService.setupModule(openIDImplicitFlowConfiguration, authWellKnownEndpoints);
-
+      this.oidcSecurityService.setCustomRequestParameters({ 'prompt': 'admin_consent' });
     });
 
     console.log('APP STARTING');
