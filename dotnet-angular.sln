@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-angular-google-oidc", "dotnet-angular-google-oidc\dotnet-angular-google-oidc.csproj", "{07740C03-DF79-4403-9ACF-5F2193041861}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5B409110-525B-43FE-AEAC-5485403A49FA}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-angular-azure-ad-oidc", "dotnet-angular-azure-ad-oidc\dotnet-angular-azure-ad-oidc.csproj", "{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07740C03-DF79-4403-9ACF-5F2193041861}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07740C03-DF79-4403-9ACF-5F2193041861}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07740C03-DF79-4403-9ACF-5F2193041861}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07740C03-DF79-4403-9ACF-5F2193041861}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E71A5D77-9735-44FB-A045-FDF7D1FAFE6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CD479C2-EEA8-4363-B762-7BA6A07D874C}
+	EndGlobalSection
+EndGlobal
