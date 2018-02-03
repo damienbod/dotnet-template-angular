@@ -11,3 +11,7 @@ https://github.com/damienbod/angular-auth-oidc-client
 https://github.com/angular/angular-cli
 
 https://www.npmjs.com/package/angular-auth-oidc-client
+
+### History
+
+2018-02-03 Updated npm packages, dotnet packages
