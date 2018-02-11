@@ -14,4 +14,6 @@ https://www.npmjs.com/package/angular-auth-oidc-client
 
 ### History
 
+2018-02-11 Updated npm packages
+
 2018-02-03 Updated npm packages, dotnet packages
