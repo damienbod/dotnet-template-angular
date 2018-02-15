@@ -8,8 +8,8 @@ import { ProtectedComponent } from './protected/protected.component';
 import { AuthorizationGuard } from './authorization.guard';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full', canActivate: [AuthorizationGuard] },
+  { path: 'home', component: HomeComponent, canActivate: [AuthorizationGuard] },
   { path: 'autologin', component: AutoLoginComponent },
   { path: 'forbidden', component: ForbiddenComponent },
   { path: 'unauthorized', component: UnauthorizedComponent },
