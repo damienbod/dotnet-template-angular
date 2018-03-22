@@ -24,7 +24,11 @@ export class AuthorizationGuard implements CanActivate {
           return true;
         }
 
-        this.router.navigate(['/unauthorized']);
+        if (!window.location.hash) {
+          console.log('AuthorizationGuard auto login');
+          this.router.navigate(['/autologin']);
+        }
+
         return false;
       })
     );
