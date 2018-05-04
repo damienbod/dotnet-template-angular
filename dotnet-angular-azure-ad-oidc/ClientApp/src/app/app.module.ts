@@ -84,7 +84,7 @@ export class AppModule {
       openIDImplicitFlowConfiguration.auto_userinfo = false;
       openIDImplicitFlowConfiguration.log_console_warning_active = true;
       openIDImplicitFlowConfiguration.log_console_debug_active = !environment.production;
-      openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds = 600;
+      openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds = 1000;
 
       const authWellKnownEndpoints = new AuthWellKnownEndpoints();
       authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
