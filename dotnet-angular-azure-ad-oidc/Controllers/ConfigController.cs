@@ -114,6 +114,10 @@ namespace dotnet_angular_oidc.Controllers
             {
                 config.additional_login_parameters["resource"] = _configuration["oidc:resource"];
             }
+            if (!String.IsNullOrEmpty(_configuration["oidc:prompt"])) 
+            {
+                config.additional_login_parameters["prompt"] = _configuration["oidc:prompt"];
+            }
             return config;
         }
     }
