@@ -14,7 +14,7 @@ https://www.npmjs.com/package/angular-auth-oidc-client
 
 ### History
 
-2018-08-01 Updated angular 6.1.0, ASP.NET Core 2.1, fixed well known endpoints for Azure AD OIDC
+2018-08-02 Updated angular 6.1.0, ASP.NET Core 2.1, fixed well known endpoints for Azure AD OIDC
 
 2018-05-04 Updated angular 6.0.0
 
