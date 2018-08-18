@@ -68,11 +68,11 @@ export class AppModule {
 
         let openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
         openIDImplicitFlowConfiguration.stsServer = 'https://accounts.google.com';
-        openIDImplicitFlowConfiguration.redirect_url = 'https://localhost:44367';
+        openIDImplicitFlowConfiguration.redirect_url = 'https://localhost:44388';
         openIDImplicitFlowConfiguration.client_id = '188968487735-b1hh7k87nkkh6vv84548sinju2kpr7gn.apps.googleusercontent.com';
         openIDImplicitFlowConfiguration.response_type = 'id_token token';
         openIDImplicitFlowConfiguration.scope = 'openid email profile';
-        openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44367/unauthorized';
+        openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44388/unauthorized';
         openIDImplicitFlowConfiguration.post_login_route = '/home';
         openIDImplicitFlowConfiguration.forbidden_route = '/forbidden';
         openIDImplicitFlowConfiguration.unauthorized_route = '/unauthorized';
