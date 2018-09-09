@@ -26,7 +26,7 @@
     "@angular/platform-server": "6.1.7",
     "@angular/router": "6.1.7",
     "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
-    "angular-auth-oidc-client": "6.0.8",
+    "angular-auth-oidc-client": "6.0.9",
     "aspnet-prerendering": "^3.0.1",
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.7",
