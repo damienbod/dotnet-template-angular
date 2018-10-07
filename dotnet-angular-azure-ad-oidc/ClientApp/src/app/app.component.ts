@@ -66,7 +66,7 @@ export class AppComponent {
     if (authorizationResult === AuthorizationResult.authorized) {
       this.router.navigate([path]);
     } else {
-      this.router.navigate(['/Unauthorized']);
+      this.router.navigate(['/unauthorized']);
     }
   }
 
