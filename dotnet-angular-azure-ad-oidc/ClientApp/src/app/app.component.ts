@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthorizationResult, OidcSecurityService } from 'angular-auth-oidc-client';
+import { AuthorizationResult, OidcSecurityService, AuthorizationState } from 'angular-auth-oidc-client';
 import { Router } from '@angular/router';
 
 @Component({
@@ -63,7 +63,7 @@ export class AppComponent {
   private onAuthorizationResultComplete(authorizationResult: AuthorizationResult) {
     console.log('AppComponent:onAuthorizationResultComplete');
     const path = this.read('redirect');
-    if (authorizationResult === AuthorizationResult.authorized) {
+    if (authorizationResult.authorizationState === AuthorizationState.authorized) {
       this.router.navigate([path]);
     } else {
       this.router.navigate(['/unauthorized']);
