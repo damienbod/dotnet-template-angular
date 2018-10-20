@@ -14,6 +14,8 @@ https://www.npmjs.com/package/angular-auth-oidc-client
 
 ### History
 
+2018-10-20 Updated angular 7.0.0, oidc lib 7.0.2
+
 2018-10-14 Updated angular 6.1.10, oidc lib 7.0.0
 
 2018-10-07 Updated angular 6.1.9, oidc lib 6.0.12
