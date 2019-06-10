@@ -31,7 +31,6 @@ export class AppComponent {
   }
 
   ngOnDestroy(): void {
-    this.oidcSecurityService.onModuleSetup.unsubscribe();
   }
 
   login() {
@@ -50,8 +49,9 @@ export class AppComponent {
   }
 
   private onOidcModuleSetup() {
+    console.log('AppComponent:onAuthorizationResultComplete');
     if (window.location.hash) {
-      this.oidcSecurityService.authorizedCallback();
+      this.oidcSecurityService.authorizedImplicitFlowCallback();
     } else {
       if ('/autologin' !== window.location.pathname) {
         this.write('redirect', window.location.pathname);
@@ -64,7 +64,9 @@ export class AppComponent {
     console.log('AppComponent:onAuthorizationResultComplete');
     const path = this.read('redirect');
     if (authorizationResult.authorizationState === AuthorizationState.authorized) {
-      this.router.navigate([path]);
+      if (path) {
+        this.router.navigate([path]);
+      }
     } else {
       this.router.navigate(['/unauthorized']);
     }
