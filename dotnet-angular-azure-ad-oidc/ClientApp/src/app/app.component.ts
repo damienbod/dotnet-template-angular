@@ -31,7 +31,6 @@ export class AppComponent {
   }
 
   ngOnDestroy(): void {
-    this.oidcSecurityService.onModuleSetup.unsubscribe();
   }
 
   login() {

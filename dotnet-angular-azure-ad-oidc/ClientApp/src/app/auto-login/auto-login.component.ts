@@ -21,7 +21,6 @@ export class AutoLoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.oidcSecurityService.onModuleSetup.unsubscribe();
   }
 
   private onModuleSetup() {
