@@ -51,7 +51,7 @@ export class AppComponent {
 
   private onOidcModuleSetup() {
     if (window.location.hash) {
-      this.oidcSecurityService.authorizedCallback();
+      this.oidcSecurityService.authorizedImplicitFlowCallback();
     } else {
       if ('/autologin' !== window.location.pathname) {
         this.write('redirect', window.location.pathname);
