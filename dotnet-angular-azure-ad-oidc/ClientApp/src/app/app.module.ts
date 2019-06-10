@@ -76,7 +76,7 @@ export class AppModule {
       authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
 
       const openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
-      openIDImplicitFlowConfiguration.stsServer = this.oidcConfigService.wellKnownEndpoints.issuer;
+      openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/ed48a4e2-9762-4f41-8a15-9bcd99965fab/v2.0/';//this.oidcConfigService.wellKnownEndpoints.issuer;
       openIDImplicitFlowConfiguration.redirect_url = this.oidcConfigService.clientConfiguration.redirect_url;
       // The Client MUST validate that the aud (audience) Claim contains its client_id value registered at the Issuer
       // identified by the iss (issuer) Claim as an audience.
@@ -102,9 +102,12 @@ export class AppModule {
       openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds =
         this.oidcConfigService.clientConfiguration.max_id_token_iat_offset_allowed_in_seconds;
 
+      openIDImplicitFlowConfiguration.iss_validation_off = true;
+
       this.oidcSecurityService.setupModule(openIDImplicitFlowConfiguration, authWellKnownEndpoints);
 
-      this.oidcSecurityService.setCustomRequestParameters( this.oidcConfigService.clientConfiguration.additional_login_parameters );
+      //this.oidcSecurityService.setCustomRequestParameters(this.oidcConfigService.clientConfiguration.additional_login_parameters);
+      this.oidcSecurityService.setCustomRequestParameters({ response_mode: 'fragment' } );
     });
 
     console.log('APP STARTING');

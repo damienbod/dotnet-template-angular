@@ -49,6 +49,7 @@ export class AppComponent {
   }
 
   private onOidcModuleSetup() {
+    console.log('AppComponent:onAuthorizationResultComplete');
     if (window.location.hash) {
       this.oidcSecurityService.authorizedImplicitFlowCallback();
     } else {
