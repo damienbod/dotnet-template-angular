@@ -64,7 +64,9 @@ export class AppComponent {
     console.log('AppComponent:onAuthorizationResultComplete');
     const path = this.read('redirect');
     if (authorizationResult.authorizationState === AuthorizationState.authorized) {
-      this.router.navigate([path]);
+      if (path) {
+        this.router.navigate([path]);
+      }
     } else {
       this.router.navigate(['/unauthorized']);
     }
