@@ -68,21 +68,21 @@ export class AppModule {
       this.oidcConfigService.onConfigurationLoaded.subscribe((configResult: ConfigResult) => {
 
         const config: OpenIdConfiguration = {
-          stsServer: configResult.customConfig.stsServer,
-          redirect_url: configResult.customConfig.redirect_url,
-          client_id: configResult.customConfig.client_id,
-          response_type: configResult.customConfig.response_type,
-          scope: configResult.customConfig.scope,
-          post_logout_redirect_uri: configResult.customConfig.post_logout_redirect_uri,
-          start_checksession: configResult.customConfig.start_checksession,
-          silent_renew: configResult.customConfig.silent_renew,
-          silent_renew_url: 'https://localhost:44311/silent-renew.html',
-          post_login_route: configResult.customConfig.startup_route,
-          forbidden_route: configResult.customConfig.forbidden_route,
-          unauthorized_route: configResult.customConfig.unauthorized_route,
-          log_console_warning_active: configResult.customConfig.log_console_warning_active,
-          log_console_debug_active: configResult.customConfig.log_console_debug_active,
-          max_id_token_iat_offset_allowed_in_seconds: configResult.customConfig.max_id_token_iat_offset_allowed_in_seconds,
+          stsServer: 'https://accounts.google.com',
+          redirect_url: 'https://localhost:44388',
+          client_id: '188968487735-b1hh7k87nkkh6vv84548sinju2kpr7gn.apps.googleusercontent.com',
+          response_type: 'id_token token',
+          scope: 'openid email profile',
+          post_logout_redirect_uri: 'https://localhost:44388/unauthorized',
+          start_checksession: false,
+          silent_renew: false,
+          silent_renew_url: 'https://localhost:44388/silent-renew.html',
+          post_login_route: '/home',
+          forbidden_route: '/forbidden',
+          unauthorized_route: '/unauthorized',
+          log_console_warning_active: true,
+          log_console_debug_active: true,
+          max_id_token_iat_offset_allowed_in_seconds: 30,
           history_cleanup_off: true
           // iss_validation_off: false
           // disable_iat_offset_validation: true
@@ -90,31 +90,6 @@ export class AppModule {
 
         this.oidcSecurityService.setupModule(config, configResult.authWellknownEndpoints);
       });
-
-
-        //this.oidcConfigService.onConfigurationLoaded.subscribe(() => {
-
-        //let openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
-        //openIDImplicitFlowConfiguration.stsServer = 'https://accounts.google.com';
-        //openIDImplicitFlowConfiguration.redirect_url = 'https://localhost:44388';
-        //openIDImplicitFlowConfiguration.client_id = '188968487735-b1hh7k87nkkh6vv84548sinju2kpr7gn.apps.googleusercontent.com';
-        //openIDImplicitFlowConfiguration.response_type = 'id_token token';
-        //openIDImplicitFlowConfiguration.scope = 'openid email profile';
-        //openIDImplicitFlowConfiguration.post_logout_redirect_uri = 'https://localhost:44388/unauthorized';
-        //openIDImplicitFlowConfiguration.post_login_route = '/home';
-        //openIDImplicitFlowConfiguration.forbidden_route = '/forbidden';
-        //openIDImplicitFlowConfiguration.unauthorized_route = '/unauthorized';
-        //openIDImplicitFlowConfiguration.trigger_authorization_result_event = true;
-        //openIDImplicitFlowConfiguration.log_console_warning_active = true;
-        //openIDImplicitFlowConfiguration.log_console_debug_active = true;
-        //openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds = 20;
-
-        //const authWellKnownEndpoints = new AuthWellKnownEndpoints();
-        //authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
-
-        //this.oidcSecurityService.setupModule(openIDImplicitFlowConfiguration, authWellKnownEndpoints);
-
-        //});
 
         console.log('APP STARTING');
     }

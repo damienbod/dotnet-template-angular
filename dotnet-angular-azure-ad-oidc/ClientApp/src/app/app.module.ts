@@ -89,49 +89,17 @@ export class AppModule {
         log_console_warning_active: configResult.customConfig.log_console_warning_active,
         log_console_debug_active: configResult.customConfig.log_console_debug_active,
         max_id_token_iat_offset_allowed_in_seconds: configResult.customConfig.max_id_token_iat_offset_allowed_in_seconds,
+        auto_userinfo: false,
         history_cleanup_off: true,
         iss_validation_off: true
         // disable_iat_offset_validation: true
       };
-
 
       this.oidcSecurityService.setupModule(config, configResult.authWellknownEndpoints);
 
       this.oidcSecurityService.setCustomRequestParameters(configResult.customConfig.additional_login_parameters);
       this.oidcSecurityService.setCustomRequestParameters({ response_mode: 'fragment' } );
     });
-
-    //this.oidcConfigService.onConfigurationLoaded.subscribe(() => {
-
-    //  const authWellKnownEndpoints = new AuthWellKnownEndpoints();
-    //  authWellKnownEndpoints.setWellKnownEndpoints(this.oidcConfigService.wellKnownEndpoints);
-
-    //  const openIDImplicitFlowConfiguration = new OpenIDImplicitFlowConfiguration();
-    //  openIDImplicitFlowConfiguration.stsServer = 'https://login.microsoftonline.com/ed48a4e2-9762-4f41-8a15-9bcd99965fab/v2.0/';//this.oidcConfigService.wellKnownEndpoints.issuer;
-    //  openIDImplicitFlowConfiguration.redirect_url = this.oidcConfigService.clientConfiguration.redirect_url;
-    //  openIDImplicitFlowConfiguration.client_id = this.oidcConfigService.clientConfiguration.client_id;
-    //  openIDImplicitFlowConfiguration.response_type = this.oidcConfigService.clientConfiguration.response_type;
-    //  openIDImplicitFlowConfiguration.scope = this.oidcConfigService.clientConfiguration.scope;
-    //  openIDImplicitFlowConfiguration.post_logout_redirect_uri = this.oidcConfigService.clientConfiguration.post_logout_redirect_uri;
-    //  openIDImplicitFlowConfiguration.start_checksession = this.oidcConfigService.clientConfiguration.start_checksession;
-    //  openIDImplicitFlowConfiguration.silent_renew = this.oidcConfigService.clientConfiguration.silent_renew;
-    //  openIDImplicitFlowConfiguration.silent_renew_url = this.oidcConfigService.clientConfiguration.silent_renew_url;
-    //  openIDImplicitFlowConfiguration.post_login_route = '/home';
-    //  openIDImplicitFlowConfiguration.forbidden_route = this.oidcConfigService.clientConfiguration.forbidden_route;
-    //  openIDImplicitFlowConfiguration.unauthorized_route = this.oidcConfigService.clientConfiguration.unauthorized_route;
-    //  openIDImplicitFlowConfiguration.auto_userinfo = this.oidcConfigService.clientConfiguration.auto_userinfo;
-    //  openIDImplicitFlowConfiguration.log_console_warning_active = this.oidcConfigService.clientConfiguration.log_console_warning_active;
-    //  openIDImplicitFlowConfiguration.log_console_debug_active = this.oidcConfigService.clientConfiguration.log_console_debug_active;
-    //  openIDImplicitFlowConfiguration.max_id_token_iat_offset_allowed_in_seconds =
-    //    this.oidcConfigService.clientConfiguration.max_id_token_iat_offset_allowed_in_seconds;
-
-    //  openIDImplicitFlowConfiguration.iss_validation_off = true;
-
-    //  this.oidcSecurityService.setupModule(openIDImplicitFlowConfiguration, authWellKnownEndpoints);
-
-    //  //this.oidcSecurityService.setCustomRequestParameters(this.oidcConfigService.clientConfiguration.additional_login_parameters);
-    //  this.oidcSecurityService.setCustomRequestParameters({ response_mode: 'fragment' } );
-    //});
 
     console.log('APP STARTING');
   }
