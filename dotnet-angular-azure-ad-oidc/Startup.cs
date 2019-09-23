@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace dotnet-angular-azure-ad-oidc
+namespace dotnet_angular_oidc
 {
     public class Startup
     {

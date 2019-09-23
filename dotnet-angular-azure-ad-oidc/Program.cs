@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace dotnet-angular-azure-ad-oidc
+namespace dotnet_angular_oidc
 {
     public class Program
     {

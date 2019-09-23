@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace  dotnet_angular.Model
+namespace dotnet_angular_oidc.Model
 {
 
     public class OIDCConfig

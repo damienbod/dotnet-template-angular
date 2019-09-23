@@ -1,14 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using dotnet_angular.Model;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Hosting;
 using Newtonsoft.Json;
+using dotnet_angular_oidc.Model;
+using Microsoft.Extensions.Hosting;
 
 namespace dotnet_angular_oidc.Controllers
 {
@@ -17,12 +16,12 @@ namespace dotnet_angular_oidc.Controllers
     {
         
         private IConfiguration _configuration;
-        private IHostingEnvironment _env;
+        private IWebHostEnvironment _env;
 
         private OidcWellKnown _wellKnown;
         private JwtKs _jwtKs;
 
-        public ConfigController(IConfiguration config, IHostingEnvironment env)
+        public ConfigController(IConfiguration config, IWebHostEnvironment env)
         {
             _configuration = config;
             _env = env;
